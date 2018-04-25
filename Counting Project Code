@@ -1,7 +1,13 @@
-for n in range(8,21): #Total number of marbles in jar
-    for w in range(3,16): #Amount of money won if the correct type of marble is chosen
-        for x in range(0,n+1): #Number of red marbles in jar
-            for y in range(0,(n-x)+1) #Number of green marbles in jar
-print("D =",(x/n)*w) #D value if red marble is the prize winner
-print("D =",(y/n)*w) #D value if green marble is the prize winner
+n = int(input("Enter the N value (amount of marbles in the jar). The minimum is 8 marbles, and the maximum is 20 marbles. "))
+if n < 8:
+    print("The jar must have at least 8 or more marbles.")
+if n > 20:
+    print("The jar can only hold a maximum of 20 marbles.")
+
+w = int(input("Enter the W value (amount of money won if the correct type of marble is guessed). The minimum is $3, and the maximum is $15. "))
+if w < 3:
+    print("The prize must at least be $3.")
+if w > 15:
+    print("The prize must be $15 or less.")
+
 
