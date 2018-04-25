@@ -10,4 +10,5 @@ if w < 3:
 if w > 15:
     print("The prize must be $15 or less.")
 
-
+for x in range(0,n+1):
+    print("D(r) =",w*(x/n))
