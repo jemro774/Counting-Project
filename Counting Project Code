@@ -1,4 +1,7 @@
 for n in range(8,21):
     for w in range(3,16):
-        for x in range(1,n):
-print("D =",(x/n)*w)
+        for x in range(0,n+1): #Number of red marbles in jar
+            for y in range(0,(n-x)+1) #Number of green marbles in jar
+print("D =",(x/n)*w) #D value if red marble is the prize winner
+print("D =",(y/n)*w) #D value if green marble is the prize winner
+
