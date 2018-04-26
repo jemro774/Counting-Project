@@ -19,32 +19,30 @@ if w > 15:
 r = randint(0,n)
 g = n-r
 x = randint(1,2)
-dr = w*(r/n)
-dg = w*((n-r)/n)
+dr = round(w*(r/n),2)
+dg = round(w*((n-r)/n),2)
 
 if x == 1:
-    answer = 1
     print("The D value is $",dr,"(the price to play the game).")
     guess = float(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
     if guess < 1:
-        print("Error, number chosen is not correlated to any of the available strategies")
+        print("Error, number chosen is not correlated to any of the available strategies.")
     elif guess > 5:
-        print("Error, number chosen is not correlated to any of the available strategies")
-    elif guess == answer:
+        print("Error, number chosen is not correlated to any of the available strategies.")
+    elif guess == 1:
         print("You have just won $",w,"! You gained $",w-dr,".")
-    elif guess != answer:
+    elif guess == 2:
         print("Incorrect answer. You have just lost $",dr,".")
 elif x == 2:
-    answer = 2
     print("The D value is $",dg,"(the price to play the game).")
     guess = float(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
     if guess < 1:
         print("Error, number chosen is not correlated to any of the available strategies")
     elif guess > 5:
         print("Error, number chosen is not correlated to any of the available strategies")
-    elif guess == answer:
+    elif guess == 2:
         print("You have just won $",w,"! You gained $",w-dg,".")
-    elif guess != answer:
+    elif guess == 1:
         print("Incorrect answer. You have just lost $",dg,".")
     
 
