@@ -16,6 +16,6 @@ if w > 15:
 
 for x in range(0,n+1): #X represents the number of red marbles
     print("D(",x,"r) =",w*(x/n))
-    print("D(",n-x,"g) =",w*(n-x/n))
+    print("D(",n-x,"g) =",w*((n-x)/n))
 
 
