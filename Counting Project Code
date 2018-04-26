@@ -41,9 +41,6 @@ if x == 1:
         elif y == 2:
             print("That will cost $P. The marble is green, so you guess green.") #modify to include P value
             print("Incorrect answer. You have just lost $",dr,".") #modify to include P value
-        
-            
-        
 elif x == 2:
     print("The D value is $",dg,"(the price to play the game).")
     guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. (3) Pay an extra $P above $D to pick a marble from the jar and then replace it. If it is red, guess red and if it is green, guess green. "))
