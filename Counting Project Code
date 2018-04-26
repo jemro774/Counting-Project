@@ -1,3 +1,7 @@
+#Jack Robey
+#4/25/18
+#Project Counting Simulation
+
 n = int(input("Enter the N value (amount of marbles in the jar). The minimum is 8 marbles, and the maximum is 20 marbles. "))
 if n < 8:
     print("The jar must have at least 8 or more marbles.")
@@ -10,5 +14,8 @@ if w < 3:
 if w > 15:
     print("The prize must be $15 or less.")
 
-for x in range(0,n+1):
-    print("D(r) =",w*(x/n))
+for x in range(0,n+1): #X represents the number of red marbles
+    print("D(",x,"r) =",w*(x/n))
+    print("D(",n-x,"g) =",w*(n-x/n))
+
+
