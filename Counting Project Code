@@ -23,15 +23,29 @@ dr = w*(r/n)
 dg = w*((n-r)/n)
 
 if x == 1:
+    answer = 1
     print("The D value is $",dr,"(the price to play the game).")
     guess = float(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
-    if guess == 1:
-        print("You have just won $",w,"! You gained $",w-d,".")
+    if guess < 1:
+        print("Error, number chosen is not correlated to any of the available strategies")
+    elif guess > 5:
+        print("Error, number chosen is not correlated to any of the available strategies")
+    elif guess == answer:
+        print("You have just won $",w,"! You gained $",w-dr,".")
+    elif guess != answer:
+        print("Incorrect answer. You have just lost $",dr,".")
 elif x == 2:
+    answer = 2
     print("The D value is $",dg,"(the price to play the game).")
     guess = float(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
-    if guess == 2:
-        print("You have just won $",w,"! You gained $",w-d,".")
+    if guess < 1:
+        print("Error, number chosen is not correlated to any of the available strategies")
+    elif guess > 5:
+        print("Error, number chosen is not correlated to any of the available strategies")
+    elif guess == answer:
+        print("You have just won $",w,"! You gained $",w-dg,".")
+    elif guess != answer:
+        print("Incorrect answer. You have just lost $",dg,".")
     
 
 
