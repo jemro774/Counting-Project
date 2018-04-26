@@ -55,10 +55,10 @@ elif x == 2:
     elif guess == 3:
         if y == 1:
             print("That will cost $P. The marble is red, so you guess red.") #modify to include P value
-            print("Incorrect answer. You have just lost $",dr,".") #modify to include P value
+            print("Incorrect answer. You have just lost $",dg,".") #modify to include P value
         elif y == 2:
             print("That will cost $P. The marble is green, so you guess green.") #modify to include P value
-            print("You have just won $",w,"! You gained $",w-dr,".") #modify to include P value
+            print("You have just won $",w,"! You gained $",w-dg,".") #modify to include P value
         
     
 
