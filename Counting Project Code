@@ -5,13 +5,7 @@
 from random import randint
 
 n = int(input("Enter the N value (amount of marbles in the jar). The minimum is 8 marbles, and the maximum is 20 marbles. "))
-
 w = round(float(input("Enter the W value (amount of money won if the correct type of marble is guessed). The minimum is $3, and the maximum is $15. ")),2)
-if w < 3:
-    print("The prize must at least be $3.")
-if w > 15:
-    print("The prize must be $15 or less.")
-
 x = randint(1,2)
 r = randint(1,n-1)
 g = n-r
