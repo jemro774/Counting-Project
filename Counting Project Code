@@ -4,13 +4,13 @@
 
 from random import randint
 
-n = float(input("Enter the N value (amount of marbles in the jar). The minimum is 8 marbles, and the maximum is 20 marbles. "))
+n = int(input("Enter the N value (amount of marbles in the jar). The minimum is 8 marbles, and the maximum is 20 marbles. "))
 if n < 8:
     print("The jar must have at least 8 or more marbles.")
 if n > 20:
     print("The jar can only hold a maximum of 20 marbles.")
 
-w = int(input("Enter the W value (amount of money won if the correct type of marble is guessed). The minimum is $3, and the maximum is $15. "))
+w = round(float(input("Enter the W value (amount of money won if the correct type of marble is guessed). The minimum is $3, and the maximum is $15. ")),2)
 if w < 3:
     print("The prize must at least be $3.")
 if w > 15:
@@ -24,7 +24,7 @@ dg = round(w*((n-r)/n),2)
 
 if x == 1:
     print("The D value is $",dr,"(the price to play the game).")
-    guess = float(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
+    guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
     if guess < 1:
         print("Error, number chosen is not correlated to any of the available strategies.")
     elif guess > 5:
@@ -35,7 +35,7 @@ if x == 1:
         print("Incorrect answer. You have just lost $",dr,".")
 elif x == 2:
     print("The D value is $",dg,"(the price to play the game).")
-    guess = float(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
+    guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. "))
     if guess < 1:
         print("Error, number chosen is not correlated to any of the available strategies")
     elif guess > 5:
