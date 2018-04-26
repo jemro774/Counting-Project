@@ -16,9 +16,9 @@ if w < 3:
 if w > 15:
     print("The prize must be $15 or less.")
 
-r = randint(0,n)
-g = n-r
 x = randint(1,2)
+r = randint(1,n-1)
+g = n-r
 dr = round(w*(r/n),2)
 dg = round(w*((n-r)/n),2)
 
