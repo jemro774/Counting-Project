@@ -2,6 +2,8 @@
 #4/25/18
 #Project Counting Simulation
 
+from random import randint
+
 n = int(input("Enter the N value (amount of marbles in the jar). The minimum is 8 marbles, and the maximum is 20 marbles. "))
 if n < 8:
     print("The jar must have at least 8 or more marbles.")
@@ -14,8 +16,14 @@ if w < 3:
 if w > 15:
     print("The prize must be $15 or less.")
 
-for x in range(0,n+1): #x represents the number of red marbles
-    print("D(",x,"r) =",w*(x/n))
-    print("D(",n-x,"g) =",w*((n-x)/n)) #n-x represents the number of green marbles
+r = randint(0,n)
+g = n-r
+x = randint(1,2)
+
+if x == 1:
+    guess
+
+
+
 
 
