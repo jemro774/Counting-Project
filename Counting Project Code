@@ -21,7 +21,9 @@ g = n-r
 x = randint(1,2)
 
 if x == 1:
-    guess
+    answer = red
+    print("The D value is $",w*(r/n),"(the price to play the game).")
+    
 
 
 
