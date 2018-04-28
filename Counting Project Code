@@ -18,7 +18,7 @@ d = round(dt/(n-1),2)
 
 pt = 0
 for i in range(1,n):
-    pt = pt + (((n-i/n)*d - (i/n)*w + (i/n)*d)/((-(n-i)/n)-(i/n)))
+    pt = pt + -((n-i/n)*d + (i/n)*w - (i/n)*d)
 p = round(pt/(n-1),2)
 
 Jar = []
