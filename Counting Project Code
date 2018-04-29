@@ -58,19 +58,15 @@ else:
         print("Incorrect answer. You have just lost $",d,".")
     elif guess == 2 and Jar[y] != 0:
         print("You have just won $",w,"! You gained $",w-d,".")
-    '''elif guess == 3 and Jar[y] == 0:
+    elif guess == 3 and Jar[y] == 0:
         print("That will cost $P. The marble is red, so you guess red.") #modify to include P value
-        Jar[y] != 0
-        if Jar[z] != 0:
-            Jar [z] = 0
+        if Jar[z] == 0:
             print("You have just won $",w,"! You gained $",w-d,".") #modify to include P value
-        else:
-            print("That will cost $P. The marble is green, so you guess green.") #modify to include P value
+        if Jar[z] != 0:
             print("Incorrect answer. You have just lost $",d,".") #modify to include P value
     elif guess == 3 and Jar[y] != 0:
+        print("That will cost $P. The marble is green, so you guess green.") #modify to include P value
         if Jar[z] == 0:
-            print("That will cost $P. The marble is red, so you guess red.") #modify to include P value
             print("Incorrect answer. You have just lost $",d,".") #modify to include P value
-        else:
-            print("That will cost $P. The marble is green, so you guess green.") #modify to include P value
-            print("You have just won $",w,"! You gained $",w-d,".") #modify to include P value'''
+        if Jar[z] != 0:
+            print("You have just won $",w,"! You gained $",w-d,".") #modify to include P value
