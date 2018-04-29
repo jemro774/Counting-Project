@@ -10,6 +10,8 @@ r = randint(0,n)
 g = n-r
 y = randint(0,n-1)
 z = randint(0,n-1)
+a = randint(0,n-1)
+b = randint(0,n-1)
 
 dt = 0
 for i in range(1,n):
@@ -70,3 +72,31 @@ else:
             print("Incorrect answer. You have just lost $",d,".") #modify to include P value
         if Jar[z] != 0:
             print("You have just won $",w,"! You gained $",w-d,".") #modify to include P value
+    elif guess == 4 and Jar[y] == 0 and Jar[z] == 0:
+        print("That will cost $R. Both marbles are red, so you guess red.") #modify to include R value
+        if Jar[a] == 0:
+            print("You have just won $",w,"! You gained $",w-d,".") #modify to include R value
+        if Jar[a] != 0:
+            print("Incorrect answer. You have just lost $",d,".") #modify to include R value
+    elif guess == 4 and Jar[y] != 0 and Jar[z] != 0:
+        print("That will cost $R. Both marbles are green, so you guess green.") #modify to include R value
+        if Jar[a] == 0:
+            print("Incorrect answer. You have just lost $",d,".") #modify to include R value
+        if Jar[a] != 0:
+            print("You have just won $",w,"! You gained $",w-d,".") #modify to include R value
+    elif guess == 4 and Jar[y] != 0 and Jar[z] == 0 or guess == 4 and Jar[y] == 0 and Jar[z] != 0:
+        print("That will cost $R. One marble is red and the other is green, so you pick another marble.") #modify to include R value
+        if Jar[a] == 0:
+            print("The marble is red, so you guess red.")
+            if Jar[b] == 0:
+                print("You have just won $",w,"! You gained $",w-d,".") #modify to include R value
+            if Jar[b] != 0:
+                print("Incorrect answer. You have just lost $",d,".") #modify to include R value
+        if Jar[a] != 0:
+            print("The marble is green, so you guess green.")
+            if Jar[b] == 0:
+                print("Incorrect answer. You have just lost $",d,".") #modify to include R value
+            if Jar[b] != 0:
+                print("You have just won $",w,"! You gained $",w-d,".") #modify to include R value
+            
+        
