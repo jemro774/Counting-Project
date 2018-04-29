@@ -31,57 +31,33 @@ for i in range(1,r+1):
         Jar[x] = 0
 print(Jar)
 
-if Jar[y] == 0:
-    if n < 8:
-        print("The jar must have at least 8 or more marbles.")
-    elif n > 20:
-        print("The jar can only hold a maximum of 20 marbles.")
-    elif w < 3:
-        print("The prize must at least be $3.")
-    elif w > 15:
-        print("The prize must be $15 or less.")
-    else:
-        print("The D value is $",d,"(the price to play the game).")
-        guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. (3) Pay an extra $P above $D to pick a marble from the jar and then replace it. If it is red, guess red and if it is green, guess green. "))
-        if guess < 1:
-            print("Error, number chosen is not correlated to any of the available strategies.")
-        elif guess > 5:
-            print("Error, number chosen is not correlated to any of the available strategies.")
-        elif guess == 1:
-            print("You have just won $",w,"! You gained $",w-d,".")
-        elif guess == 2:
-            print("Incorrect answer. You have just lost $",d,".")
-        elif guess == 3:
-            if Jar[z] == 0:
-                print("That will cost $",p,". The marble is red, so you guess red.") #modify to include P value
-                print("You have just won $",w,"! You gained $",w-(d+p),".") #modify to include P value
-            else:
-                print("That will cost $",p,". The marble is green, so you guess green.") #modify to include P value
-                print("Incorrect answer. You have just lost $",d+p,".") #modify to include P value
+if n < 8:
+    print("The jar must have at least 8 or more marbles.")
+elif n > 20:
+    print("The jar can only hold a maximum of 20 marbles.")
+elif w < 3:
+    print("The prize must at least be $3.")
+elif w > 15:
+    print("The prize must be $15 or less.")
 else:
-    if n < 8:
-        print("The jar must have at least 8 or more marbles.")
-    elif n > 20:
-        print("The jar can only hold a maximum of 20 marbles.")
-    elif w < 3:
-        print("The prize must at least be $3.")
-    elif w > 15:
-        print("The prize must be $15 or less.")
-    else:
-        print("The D value is $",d,"(the price to play the game).")
-        guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. (3) Pay an extra $P above $D to pick a marble from the jar and then replace it. If it is red, guess red and if it is green, guess green. "))
-        if guess < 1:
-            print("Error, number chosen is not correlated to any of the available strategies")
-        elif guess > 5:
-            print("Error, number chosen is not correlated to any of the available strategies")
-        elif guess == 2:
-            print("You have just won $",w,"! You gained $",w-d,".")
-        elif guess == 1:
-            print("Incorrect answer. You have just lost $",d,".")
-        elif guess == 3:
-            if Jar[z] == 0:
-                print("That will cost $",p,". The marble is red, so you guess red.") #modify to include P value
-                print("Incorrect answer. You have just lost $",d+p,".") #modify to include P value
-            else:
-                print("That will cost $",p,". The marble is green, so you guess green.") #modify to include P value
-                print("You have just won $",w,"! You gained $",w-(d+p),".") #modify to include P value
+    print("The D value is $",d,"(the price to play the game).")
+    guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. (3) Pay an extra $P above $D to pick a marble from the jar and then replace it. If it is red, guess red and if it is green, guess green. "))
+    if guess < 1:
+        print("Error, number chosen is not correlated to any of the available strategies.")
+    elif guess > 5:
+        print("Error, number chosen is not correlated to any of the available strategies.")
+    elif guess == 1 and Jar[y] == 0:
+        print("You have just won $",w,"! You gained $",w-d,".")
+    elif guess == 2 and Jar[y] == 0:
+        print("Incorrect answer. You have just lost $",d,".")
+    elif guess == 1 and Jar[y] != 0:
+        print("Incorrect answer. You have just lost $",d,".")
+    elif guess == 2 and Jar[y] != 0:
+        print("You have just won $",w,"! You gained $",w-d,".")
+    elif guess == 3:
+        if Jar[z] == 0:
+            print("That will cost $",p,". The marble is red, so you guess red.") #modify to include P value
+            print("You have just won $",w,"! You gained $",w-(d+p),".") #modify to include P value
+        else:
+            print("That will cost $",p,". The marble is green, so you guess green.") #modify to include P value
+            print("Incorrect answer. You have just lost $",d+p,".") #modify to include P value
