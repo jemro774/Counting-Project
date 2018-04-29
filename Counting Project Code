@@ -47,7 +47,7 @@ elif w > 15:
     print("The prize must be $15 or less.")
 else:
     print("The D value is $",d,"(the price to play the game).")
-    guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. (3) Pay an extra $P above $D to pick a marble from the jar and then replace it. If it is red, guess red and if it is green, guess green. "))
+    guess = int(input("Choose a strategy by entering the number associated with the strategy: (1) Guess red. (2) Guess green. (3) Pay an extra $P above $D to pick a marble from the jar and then replace it. If it is red, guess red and if it is green, guess green. (4) Pay an extra $R above $D to pick a marble from the jar and replace it. Then pick another marble and replace it. If both are red, guess red, if both are green, guess green. If one is red and one is green, then pick another marble and replace it. If that one is red, guess red, and if that one is green, guess green."))
     if guess < 1:
         print("Error, number chosen is not correlated to any of the available strategies.")
     elif guess > 5:
