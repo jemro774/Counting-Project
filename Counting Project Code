@@ -20,10 +20,19 @@ Jar = []
 for i in range(1,n+1):
     Jar.append(i)
 
+print(r)
+print(g)
+
 for i in range(1,r+1):
     x = randint(0,n-1)
     if Jar[x] != 0:
         Jar[x] = 0
+    elif Jar[x] == 0:
+        for x in range(0,n-1):
+            x = x + 1
+            if Jar[x] != 0:
+                Jar[x] = 0
+                break
 print(Jar)
 
 if n < 8:
@@ -49,9 +58,11 @@ else:
         print("Incorrect answer. You have just lost $",d,".")
     elif guess == 2 and Jar[y] != 0:
         print("You have just won $",w,"! You gained $",w-d,".")
-    elif guess == 3 and Jar[y] == 0:
-        if Jar[z] == 0:
-            print("That will cost $P. The marble is red, so you guess red.") #modify to include P value
+    '''elif guess == 3 and Jar[y] == 0:
+        print("That will cost $P. The marble is red, so you guess red.") #modify to include P value
+        Jar[y] != 0
+        if Jar[z] != 0:
+            Jar [z] = 0
             print("You have just won $",w,"! You gained $",w-d,".") #modify to include P value
         else:
             print("That will cost $P. The marble is green, so you guess green.") #modify to include P value
@@ -62,4 +73,4 @@ else:
             print("Incorrect answer. You have just lost $",d,".") #modify to include P value
         else:
             print("That will cost $P. The marble is green, so you guess green.") #modify to include P value
-            print("You have just won $",w,"! You gained $",w-d,".") #modify to include P value
+            print("You have just won $",w,"! You gained $",w-d,".") #modify to include P value'''
