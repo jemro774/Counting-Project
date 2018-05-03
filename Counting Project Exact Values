@@ -1,1 +1,35 @@
+#Jack Robey and Phin Choukas
+#5/2/18
+#Project Counting - Exact Values
 
+n = int(input("Enter the N value (amount of marbles in the jar). The minimum is 8 marbles, and the maximum is 20 marbles. "))
+w = round(float(input("Enter the W value (amount of money won if the correct type of marble is guessed). The minimum is $3, and the maximum is $15. ")),2)
+
+if n < 8:
+    print("The jar must have at least 8 or more marbles.")
+elif n > 20:
+    print("The jar can only hold a maximum of 20 marbles.")
+elif w < 3:
+    print("The prize must at least be $3.")
+elif w > 15:
+    print("The prize must, at max, be $15 or less.")
+else:
+    dRedTotal = 0
+    dGreenTotal = 0
+    pTotal = 0
+    rTotal = 0
+    sTotal = 0
+    for i in range(0,n+1):
+        r = i
+        g = n-i
+        dRedTotal = dRedTotal + w*(r/n)
+        dGreenTotal = dGreenTotal + w*(g/n)
+        pTotal = pTotal + w*((r**2/n**2) + ((g**2)/n**2)) - w*(r/n)
+        rTotal = rTotal + w*((r**3)/(n**3)) + w*((g**3)/(n**3)) + w*(((r**3)*g)/(n**4)) + w*(((r**3)*g)/(n**4)) + w*(((g**3)*r)/(n**4)) + w*(((g**3)*r)/(n**4)) - w*(r/n)
+        sTotal = sTotal + w*((r*(r-1)*(r-1))/(n*(n-1)*(n-1))+(g*(g-1)*(g-1))/(n*(n-1)*(n-1)) + 2*((r*g*(r-1)*(r-1))/((n*(n-1)*(n-2)*(n-2))))+2*((r*g*(g-1)*(g-1))/((n*(n-1)*(n-2)*(n-2))))) - w*(r/n)
+    print("The D value of strategy #1 is $",round(dRedTotal/(n+1),2))
+    print("The D value of strategy #2 is $",round(dGreenTotal/(n+1),2))
+    print("The P value of strategy #3 is $",round(pTotal/(n+1),2))
+    print("The R value of strategy #4 is $",round(rTotal/(n+1),2))
+    print("The S value of strategy #5 is $",round(sTotal/(n+1),2))
+        
