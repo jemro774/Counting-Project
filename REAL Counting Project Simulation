@@ -15,20 +15,20 @@ elif n > 20:
 elif w < 3:
     print("The prize must at least be $3.")
 elif w > 15:
-    print("The prize must be $15 or less.")
+    print("The prize must, at max, be $15 or less.")
 else:
     dRTotal = 0
     dGTotal = 0
-    pRRTotal = 0
-    pGGTotal = 0
+    pTotal = 0
+    rTotal = 0
     for i in range(0,x):
         r = randint(0,n)
         g = n-r
-        dRTotal = dRTotal + w*(0.5*r/n)
-        dGTotal = dGTotal + w*(0.5*g/n)
-        pRRTotal = pRRTotal + w*((r**2)/(n**2)) - w*(0.5*r/n)
-        pGGTotal = pGGTotal + w*((g**2)/(n**2)) - w*(0.5*g/n)
+        dRTotal = dRTotal + w*(r/n)
+        dGTotal = dGTotal + w*(g/n)
+        pTotal = pTotal + w*((r**2)/(n**2)) + w*((g**2)/(n**2)) - w*(r/n)
+        rTotal = rTotal + w*((r**3)/(n**3)) + w*((g**3)/(n**3)) + w*(((r**3)*g)/(n**4)) + w*(((r**3)*g)/(n**4)) + w*(((g**3)*r)/(n**4)) + w*(((g**3)*r)/(n**4)) - w*(r/n)
     print("The D value of strategy #1 is $",round(dRTotal/x,2))
     print("The D value of strategy #2 is $",round(dGTotal/x,2))
-    print("The P value of strategy #3 when a red marble is chosen is $",round(pRRTotal/x,2))
-    print("The P value of strategy #3 when a green marble is chosen is $",round(pGGTotal/x,2))
+    print("The P value of strategy #3 when a red marble is chosen is $",round(pTotal/x,2))
+    print(round(rTotal/x,2))
